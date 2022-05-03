@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_them_nhanvien_bottom"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true">
+
+    <LinearLayout
+        android:background="@drawable/elementline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/btn_close_them_nhanvien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:drawableLeft="@drawable/baseline_close_black_36dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tên:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_ten_themnhanvien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="textPersonName"
+            android:padding="5dp" />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Địa chỉ:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_diachi_themnhanvien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="textPersonName"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tuổi:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_tuoi_themnhanvien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="number"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Căn cước công dân:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_cccd_themnhanvien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="number"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Số điện thoại:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_sdt_themnhanvien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType=""
+            android:padding="5dp" />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Chọn kho:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:background="@drawable/elementline"
+            android:id="@+id/open_list_dialog_kho"
+            android:text="Bình Chánh"
+            android:gravity="left|center_vertical"
+            android:drawablePadding="7dp"
+            android:drawableLeft="@drawable/baseline_expand_more_black_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/label_btn_xoa_nhanvien"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:background="#F44336"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_marginRight="10dp"
+                android:text="Xoá nhân viên"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/label_btn_sua_nhanvien"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:background="#F44336"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:layout_width="0dp"
+                android:layout_marginRight="10dp"
+                android:text="Sửa nhân viên"
+                android:layout_height="wrap_content"
+                />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/label_btn_nhanvien"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="#F44336"
+            android:textColor="#fff"
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="Tạo nhân viên"
+            android:layout_height="wrap_content"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

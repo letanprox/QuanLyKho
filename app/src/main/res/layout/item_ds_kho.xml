@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="7dp"
+    android:background="@drawable/custom_item_list"
+    android:paddingLeft="5dp"
+    android:paddingBottom="7dp"
+    android:id="@+id/item_dskho"
+    android:paddingTop="5dp"
+    android:layout_height="wrap_content">
+
+
+
+    <RelativeLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_tenkho_dskho"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Tên kho: Bình Chánh"
+            android:textColor="#131313"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btn_delete_dskho"
+            android:layout_width="40sp"
+            android:layout_height="35sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="1dp"
+            android:background="#fff"
+            android:drawableRight="@drawable/baseline_delete_black_24dp"
+            android:paddingRight="8dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_makho_dskho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mã kho: 23511"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_diachi_dskho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ: 123 Hoàng Thánh"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        />
+
+</LinearLayout>

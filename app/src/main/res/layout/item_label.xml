@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="15dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical"
+    android:id="@+id/contain_text_sample"
+    android:background="@drawable/border"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_sample_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:paddingLeft="10dp"
+        android:text="Mã phiếu: 5"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_sample_2"
+        android:textSize="16dp"
+        android:text="Ngày nhập kho: 23/12/2000"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/text_sample_3"
+        android:textSize="16dp"
+        android:text="Tên kho: Bình Chánh"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/text_sample_4"
+        android:textSize="16dp"
+        android:text="Nhân viên: Đỉnh Ngọc"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/text_sample_5"
+        android:textSize="16dp"
+        android:text="Tên nhà cung cấp: Lê Tấn"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/text_sample_6"
+        android:textSize="16dp"
+        android:text="Số sản phẩm: 12"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/text_sample_7"
+        android:textSize="16dp"
+        android:text="Tổng tiền: 12.125"
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout_them_nsx_bottom"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true">
+
+    <LinearLayout
+        android:background="@drawable/elementline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/btn_close_them_nsx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:drawableLeft="@drawable/baseline_close_black_36dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Tên nhà cung cấp:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_tennsx_themnsx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/edittext1"
+            android:inputType="textPersonName"
+            android:backgroundTint="@color/white"
+            android:padding="5dp" />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Địa chỉ:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_diachi_themnsx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="textPersonName"
+            android:padding="5dp" />
+
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Email:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_email_themnsx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="textPersonName"
+            android:padding="5dp" />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Số điện thoại:"
+            android:textSize="15dp"
+            android:textColor="#222222"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/input_sdt_themnsx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext1"
+            android:inputType="number"
+            android:padding="5dp" />
+
+
+        <Button
+            android:id="@+id/label_btn_nsx"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="#F44336"
+            android:textColor="#fff"
+            android:layout_marginRight="10dp"
+            android:text="Tạo Nhà Cung cấp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

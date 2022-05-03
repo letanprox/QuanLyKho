@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.qlkhov2">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QLKHOv2">
+        <activity
+            android:name=".QuanLyPhieu.ThongKe.ThongKe"
+            android:label="Thống kê"
+            android:parentActivityName=".QuanLyPhieu.MenuPhieuActivity"
+            android:windowSoftInputMode="adjustPan"  />
+        <activity
+            android:name=".QuanLyPhieu.PhieuXuat.PhieuXuatActivity"
+            android:label="Phiếu Xuất"
+            android:parentActivityName=".QuanLyPhieu.MenuPhieuActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLyPhieu.PhieuNhap.PhieuNhapActivity"
+            android:label="Phiếu Nhập"
+            android:parentActivityName=".QuanLyPhieu.MenuPhieuActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLyPhieu.MenuPhieuActivity"
+            android:label="Menu Phiếu"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLyNhanVien.NhanVienActivity"
+            android:label="Nhân viên"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLyKhachHang.KhachHangActivity"
+            android:label="Khách Hàng"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLyNhaCungCap.NhaSanXuatActivity"
+            android:label="Nhà Cung Cấp"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLySanPham.SanPhamActivity"
+            android:label="Sản Phẩm"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".QuanLyKho.NhaKhoActivity"
+            android:exported="true"
+            android:label="Nhà Kho"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="QLKHO">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
