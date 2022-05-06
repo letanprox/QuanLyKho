@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,9 +27,9 @@ import java.util.List;
 
 public class NhaKhoActivity extends AppCompatActivity {
 
-    private RecyclerView rcvdanhsachkho;
+    private ListView lvdanhsachkho;
     private List<DsKho> dsKhoList;
-    private DsKhoAdapter dsKhoAdapter;
+    private NhaKhoAdapter nhaKhoAdapter;
 
     private Button btn_them_kho, label_btn_dskho;
     private TextView btn_close_them_kho;
@@ -93,7 +94,7 @@ public class NhaKhoActivity extends AppCompatActivity {
 
     void setTagElement(){
         //MAIN ELEMENT:
-        rcvdanhsachkho = findViewById(R.id.rcv_danhsach_kho);
+        lvdanhsachkho = findViewById(R.id.lv_danhsach_kho);
         btn_them_kho = findViewById(R.id.btn_them_kho);
         btn_close_them_kho = findViewById(R.id.btn_close_them_kho);
         layout_them_kho_bottom = findViewById(R.id.layout_them_kho_bottom);
@@ -108,9 +109,8 @@ public class NhaKhoActivity extends AppCompatActivity {
     }
 
     void StartListKho(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rcvdanhsachkho.setLayoutManager(linearLayoutManager);
-        dsKhoAdapter = new DsKhoAdapter(dsKhoList, new IClickItemDsKho() {
+
+        nhaKhoAdapter = new NhaKhoAdapter(dsKhoList, new IClickItemDsKho() {
             @Override
             public void clickItem(DsKho dsKho, int pos) {
                 if (bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
@@ -146,7 +146,7 @@ public class NhaKhoActivity extends AppCompatActivity {
             }
         }
         );
-        rcvdanhsachkho.setAdapter(dsKhoAdapter);
+        lvdanhsachkho.setAdapter(nhaKhoAdapter);
     }
 
     void openBottomThemKho(){
@@ -204,7 +204,7 @@ public class NhaKhoActivity extends AppCompatActivity {
         dsKhoList.get(POS).setEmail(input_email_themkho.getText().toString());
         dsKhoList.get(POS).setSDT(input_sdt_themkho.getText().toString());
         dsKhoList.get(POS).setMota(input_mota_themkho.getText().toString());
-        dsKhoAdapter.notifyDataSetChanged();
+        nhaKhoAdapter.notifyDataSetChanged();
     }
 
 
@@ -227,13 +227,13 @@ public class NhaKhoActivity extends AppCompatActivity {
                 input_sdt_themkho.getText().toString(),
                 input_mota_themkho.getText().toString()
         ));
-        dsKhoAdapter.notifyDataSetChanged();
+        nhaKhoAdapter.notifyDataSetChanged();
     }
 
     void DELETE_NHAKHO(int MAKHO, int POS){
         MainActivity.database.QueryData("DELETE FROM NhaKho WHERE MaKho ='"+MAKHO+"'");
         dsKhoList.remove(POS);
-        dsKhoAdapter.notifyDataSetChanged();
+        nhaKhoAdapter.notifyDataSetChanged();
     }
 
 

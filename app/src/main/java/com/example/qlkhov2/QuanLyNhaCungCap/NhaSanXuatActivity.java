@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,9 +28,12 @@ import java.util.List;
 
 public class NhaSanXuatActivity extends AppCompatActivity {
 
-    private RecyclerView rcvdanhsachnsx;
+ //   private RecyclerView rcvdanhsachnsx;
+ //   private NhaSanXuatAdapter nhaSanXuatAdapter;
+
     private List<NhaSanXuat> nhaSanXuatList;
-    private NhaSanXuatAdapter nhaSanXuatAdapter;
+    private NhaCungCapAdapter nhaCungCapAdapter;
+    private ListView listViewncc;
 
     private Button btn_them_nsx;
     private TextView btn_close_them_nsx;
@@ -89,7 +93,9 @@ public class NhaSanXuatActivity extends AppCompatActivity {
 
     void setTagElement(){
         //SET MAIN ELEMENT:
-        rcvdanhsachnsx = findViewById(R.id.rcv_danhsach_nsx);
+        //rcvdanhsachnsx = findViewById(R.id.rcv_danhsach_nsx);
+        listViewncc = findViewById(R.id.lv_danhsach_nsx);
+
         btn_them_nsx = findViewById(R.id.btn_them_nsx);
         layout_them_nsx_bottom = findViewById(R.id.layout_them_nsx_bottom);
         btn_close_them_nsx = findViewById(R.id.btn_close_them_nsx);
@@ -103,9 +109,8 @@ public class NhaSanXuatActivity extends AppCompatActivity {
     }
 
     void setListNcc(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rcvdanhsachnsx.setLayoutManager(linearLayoutManager);
-        nhaSanXuatAdapter = new NhaSanXuatAdapter(nhaSanXuatList, this, new IClickDeleteNSX() {
+
+        nhaCungCapAdapter = new NhaCungCapAdapter(nhaSanXuatList,this, new IClickDeleteNSX() {
             @Override
             public void clickItem(NhaSanXuat nhaSanXuat, int pos) {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(NhaSanXuatActivity.this);
@@ -139,7 +144,8 @@ public class NhaSanXuatActivity extends AppCompatActivity {
                 }
             }
         });
-        rcvdanhsachnsx.setAdapter(nhaSanXuatAdapter);
+        listViewncc.setAdapter(nhaCungCapAdapter);
+
     }
 
     void openBottomThemNSX(){
@@ -188,17 +194,16 @@ public class NhaSanXuatActivity extends AppCompatActivity {
                 input_email_themnsx.getText().toString(),
                 input_sdt_themnsx.getText().toString()
         ));
-        nhaSanXuatAdapter.notifyDataSetChanged();
+        nhaCungCapAdapter.notifyDataSetChanged();
     }
 
     void DELETE_NHACUNGCAP(int MANHACUNGCAP, int POS){
         MainActivity.database.QueryData("DELETE FROM NhaCungCap WHERE MaNhaCungCap ='"+MANHACUNGCAP+"'");
         nhaSanXuatList.remove(POS);
-        nhaSanXuatAdapter.notifyDataSetChanged();
+        nhaCungCapAdapter.notifyDataSetChanged();
     }
 
     void UPDATE_NHACUNGCAP(int MANHACUNGCAP, int POS){
-
 
         MainActivity.database.QueryData("UPDATE NhaCungCap SET " +
                 "Ten = '"+input_tennsx_themnsx.getText().toString()+"' ," +
@@ -214,7 +219,7 @@ public class NhaSanXuatActivity extends AppCompatActivity {
         nhaSanXuatList.get(POS).setEmail(input_email_themnsx.getText().toString());
         nhaSanXuatList.get(POS).setSDT(input_sdt_themnsx.getText().toString());
 
-        nhaSanXuatAdapter.notifyDataSetChanged();
+        nhaCungCapAdapter.notifyDataSetChanged();
     }
 
 

@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ import java.util.List;
 
 public class NhanVienActivity extends AppCompatActivity {
 
-    private RecyclerView rcvdanhsachnhanvien;
+    private ListView lvdanhsachnhanvien;
     private List<NhanVien> nhanVienList;
     private NhanVienAdapter nhanVienAdapter;
 
@@ -151,7 +152,7 @@ public class NhanVienActivity extends AppCompatActivity {
 
     void setTagElement(){
         //MAIN ELEMENT:
-        rcvdanhsachnhanvien = findViewById(R.id.rcv_danhsach_nhavien);
+        lvdanhsachnhanvien = findViewById(R.id.lv_danhsach_nhavien);
 
         //ADD NHAN VIEN ELEMENT:
         input_ten_themnhanvien = findViewById(R.id.input_ten_themnhanvien);
@@ -169,8 +170,7 @@ public class NhanVienActivity extends AppCompatActivity {
 
 
     void setListNhanvien(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rcvdanhsachnhanvien.setLayoutManager(linearLayoutManager);
+
         nhanVienAdapter = new NhanVienAdapter(nhanVienList, this, new IClickDeleteNhanVien() {
             @Override
             public void clickItem(NhanVien nhanVien) {
@@ -213,7 +213,7 @@ public class NhanVienActivity extends AppCompatActivity {
 
             }
         });
-        rcvdanhsachnhanvien.setAdapter(nhanVienAdapter);
+        lvdanhsachnhanvien.setAdapter(nhanVienAdapter);
     }
 
 

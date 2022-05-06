@@ -35,7 +35,6 @@ public class KhachHang {
     }
 
 
-
     public String getDiachi() {
         return Diachi;
     }

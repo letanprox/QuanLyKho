@@ -135,7 +135,6 @@ public class PhieuNhapActivity extends AppCompatActivity {
 
 
 
-
     //INSERT PHIEU NHAP:
     void INSERT_PHIEUNHAP(){
         if(MaNhaCungCap != -1){

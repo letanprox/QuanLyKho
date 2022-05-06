@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ import java.util.List;
 
 public class KhachHangActivity extends AppCompatActivity {
 
-    private RecyclerView rcvdanhsachkhachhang;
+    private ListView lvdanhsachkhachhang;
     private List<KhachHang> khachHangList;
     private KhachHangAdapter khachHangAdapter;
 
@@ -96,7 +97,7 @@ public class KhachHangActivity extends AppCompatActivity {
 
     void setTagElement(){
         //MAIN ELEMENT:
-        rcvdanhsachkhachhang = findViewById(R.id.rcv_danhsach_khachhang);
+        lvdanhsachkhachhang = findViewById(R.id.lv_danhsach_khachhang);
         btn_them_khachhang = findViewById(R.id.btn_them_khachhang);
         btn_close_them_khachhang = findViewById(R.id.btn_close_them_khachhang);
         layout_them_khachhang_bottom = findViewById(R.id.layout_them_khachhang_bottom);
@@ -112,8 +113,7 @@ public class KhachHangActivity extends AppCompatActivity {
 
 
     void StartListKhachhang(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rcvdanhsachkhachhang.setLayoutManager(linearLayoutManager);
+
         khachHangAdapter = new KhachHangAdapter(khachHangList, this, new IClickDeleteKhachHang() {
             @Override
             public void clickItem(KhachHang khachHang, int pos) {
@@ -143,7 +143,7 @@ public class KhachHangActivity extends AppCompatActivity {
                     input_tuoi_themkhachhang.setText(Integer.toString(khachHang.getTuoi()));
                     label_btn_khachhang.setText("SỬA KHÁCH HÀNG");
 
-
+                    
                     MaKhachHang = khachHang.getMa();
                     posItemKhachHang = pos;
                 } else {
@@ -151,7 +151,7 @@ public class KhachHangActivity extends AppCompatActivity {
                 }
             }
         });
-        rcvdanhsachkhachhang.setAdapter(khachHangAdapter);
+        lvdanhsachkhachhang.setAdapter(khachHangAdapter);
     }
 
 

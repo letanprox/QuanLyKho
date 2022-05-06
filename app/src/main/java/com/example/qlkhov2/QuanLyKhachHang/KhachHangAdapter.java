@@ -1,21 +1,19 @@
 package com.example.qlkhov2.QuanLyKhachHang;
 
 import android.content.Context;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.qlkhov2.R;
 
 import java.util.List;
 
-public class KhachHangAdapter extends RecyclerView.Adapter<KhachHangAdapter.KhachHangViewHolder>{
+public class KhachHangAdapter extends BaseAdapter {
 
     List<KhachHang> khachHangList;
     Context context;
@@ -29,59 +27,62 @@ public class KhachHangAdapter extends RecyclerView.Adapter<KhachHangAdapter.Khac
         this.iClickItemKhachHang = iClickItemKhachHang;
     }
 
-    @NonNull
     @Override
-    public KhachHangViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_khachhang,parent,false);
-        return new KhachHangViewHolder(view);
+    public int getCount() {
+        return khachHangList.size();
     }
 
     @Override
-    public void onBindViewHolder(@NonNull KhachHangViewHolder holder, int position) {
-        KhachHang khachHang = khachHangList.get(position);
-        if(khachHang == null){
-            return;
-        }
+    public Object getItem(int i) {
+        return khachHangList.get(i);
+    }
 
-        holder.tv_tenkhachhang_khachhang.setText("Tên: "+khachHang.getTen());
-        holder.tv_makhachhang_khachhang.setText("Mã: "+khachHang.getMa());
-        holder.tv_diachi_khachhang.setText("Địa chỉ: "+khachHang.getDiachi());
+    @Override
+    public long getItemId(int i) {
+        return khachHangList.get(i).getMa();
+    }
 
-        holder.btn_delete_khachhang.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+
+        View viewProduct;
+        if (view == null) {
+            viewProduct = View.inflate(viewGroup.getContext(), R.layout.item_khachhang, null);
+        } else viewProduct = view;
+
+
+         LinearLayout item_khachhang;
+         Button btn_delete_khachhang;
+         TextView tv_tenkhachhang_khachhang, tv_makhachhang_khachhang, tv_diachi_khachhang;
+
+        item_khachhang = viewProduct.findViewById(R.id.item_khachhang);
+        btn_delete_khachhang = viewProduct.findViewById(R.id.btn_delete_khachhang);
+        tv_tenkhachhang_khachhang = viewProduct.findViewById(R.id.tv_tenkhachhang_khachhang);
+        tv_makhachhang_khachhang = viewProduct.findViewById(R.id.tv_makhachhang_khachhang);
+        tv_diachi_khachhang = viewProduct.findViewById(R.id.tv_diachi_khachhang);
+
+        KhachHang khachHang = khachHangList.get(i);
+
+        tv_tenkhachhang_khachhang.setText("Tên: "+khachHang.getTen());
+        tv_makhachhang_khachhang.setText("Mã: "+khachHang.getMa());
+        tv_diachi_khachhang.setText("Địa chỉ: "+khachHang.getDiachi());
+
+        btn_delete_khachhang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iClickDeleteKhachHang.clickItem(khachHang, position);
+                iClickDeleteKhachHang.clickItem(khachHang, i);
             }
         });
 
-        holder.item_khachhang.setOnClickListener(new View.OnClickListener() {
+        item_khachhang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iClickItemKhachHang.clickItem(khachHang, position);
+                iClickItemKhachHang.clickItem(khachHang, i);
             }
         });
-    }
-
-    @Override
-    public int getItemCount() {
-        if(khachHangList != null){
-            return khachHangList.size();
-        }
-        return 0;
-    }
 
 
-    class KhachHangViewHolder extends RecyclerView.ViewHolder{
-        private LinearLayout item_khachhang;
-        private Button btn_delete_khachhang;
-        private TextView tv_tenkhachhang_khachhang, tv_makhachhang_khachhang, tv_diachi_khachhang;
-        public KhachHangViewHolder(@NonNull View itemView) {
-            super(itemView);
-            item_khachhang = itemView.findViewById(R.id.item_khachhang);
-            btn_delete_khachhang = itemView.findViewById(R.id.btn_delete_khachhang);
-            tv_tenkhachhang_khachhang = itemView.findViewById(R.id.tv_tenkhachhang_khachhang);
-            tv_makhachhang_khachhang = itemView.findViewById(R.id.tv_makhachhang_khachhang);
-            tv_diachi_khachhang = itemView.findViewById(R.id.tv_diachi_khachhang);
-        }
+
+        return  viewProduct;
     }
 }
