@@ -244,6 +244,7 @@ public class NhanVienActivity extends AppCompatActivity {
         btn_close_them_nhanvien = findViewById(R.id.btn_close_them_nhanvien);
 
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+        bottomSheetBehavior.setDraggable(false);
         btn_them_nhanvien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

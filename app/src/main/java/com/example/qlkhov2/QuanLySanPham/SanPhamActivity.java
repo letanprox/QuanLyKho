@@ -143,7 +143,7 @@ public class SanPhamActivity extends AppCompatActivity {
                 previewimage_themsp.setImageBitmap(bitmap);
                 previewimage_themsp.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-                label_btn_themsp.setText("SUA SAN PHAM");
+                label_btn_themsp.setText("SỬA SẢN PHẨM");
                 MaSanPham = sanPham.getMa();
                 posItemSanPham = pos;
 
@@ -186,7 +186,7 @@ public class SanPhamActivity extends AppCompatActivity {
                     input_giatien_themsp.setText("");
                     previewimage_themsp.setImageResource(R.drawable.baseline_photo_black_48dp);
 
-                    label_btn_themsp.setText("THEM SAN PHAM");
+                    label_btn_themsp.setText("THÊM SẢN PHẨM");
                 }else {
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
                 }
