@@ -76,9 +76,9 @@ public class MenuPhieuActivity extends AppCompatActivity {
 
     private List<Item_Menu> getListMenu(){
         List<Item_Menu> list = new ArrayList<>();
-        Item_Menu item1 = new Item_Menu(1, "Phiếu nhập");
-        Item_Menu item2 = new Item_Menu(2, "Phiếu xuất");
-        Item_Menu item3 = new Item_Menu(3, "Thống kê");
+        Item_Menu item1 = new Item_Menu(1, "Phiếu nhập",R.drawable.ic_baseline_bookmark_add_24);
+        Item_Menu item2 = new Item_Menu(2, "Phiếu xuất",R.drawable.ic_baseline_bookmark_remove_24);
+        Item_Menu item3 = new Item_Menu(3, "Thống kê",R.drawable.ic_baseline_bar_chart_24);
         list.add(item1);
         list.add(item2);
         list.add(item3);

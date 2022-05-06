@@ -171,12 +171,12 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Item_Menu> getListMenu(){
         List<Item_Menu> list = new ArrayList<>();
-        Item_Menu item1 = new Item_Menu(1, "Nhà Kho");
-        Item_Menu item2 = new Item_Menu(2, "Quản lý sản phẩm");
-        Item_Menu item3 = new Item_Menu(3, "Phiếu nhập xuất");
-        Item_Menu item4 = new Item_Menu(4, "Nhà cung cấp");
-        Item_Menu item5 = new Item_Menu(5, "Nhân viên");
-        Item_Menu item6 = new Item_Menu(6, "Khách hàng");
+        Item_Menu item1 = new Item_Menu(1, "Nhà Kho",R.drawable.ic_baseline_storefront_24);
+        Item_Menu item2 = new Item_Menu(2, "Quản lý sản phẩm",R.drawable.ic_baseline_shopping_cart_24);
+        Item_Menu item3 = new Item_Menu(3, "Phiếu nhập xuất",R.drawable.ic_baseline_auto_awesome_mosaic_24);
+        Item_Menu item4 = new Item_Menu(4, "Nhà cung cấp",R.drawable.ic_baseline_supervisor_account_24);
+        Item_Menu item5 = new Item_Menu(5, "Nhân viên",R.drawable.ic_baseline_engineering_24);
+        Item_Menu item6 = new Item_Menu(6, "Khách hàng",R.drawable.ic_baseline_boy_24);
         list.add(item1);
         list.add(item2);
         list.add(item3);

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -41,29 +42,31 @@ public class Grid_Menu_Adapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-
-
         ViewHolder holder;
-
 
         if (view == null) {
             view = layoutInflater.inflate(R.layout.grid_menu_item, null);
             holder = new ViewHolder();
 
             holder.item_name = (TextView) view.findViewById(R.id.title_menu_item);
+            holder.item_icon = (ImageView) view.findViewById(R.id.icon_menu_item);
 
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        Item_Menu country = this.item_menuList.get(i);
-        holder.item_name.setText(country.getName());
+
+        Item_Menu itemdata = this.item_menuList.get(i);
+
+        holder.item_name.setText(itemdata.getName());
+        holder.item_icon.setImageResource(itemdata.getIcon());
 
         return view;
     }
 
     static class ViewHolder {
         TextView item_name;
+        ImageView item_icon;
     }
 
 }

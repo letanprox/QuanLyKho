@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/custom_menu_item"
     android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/icon_menu_item"
+        android:paddingTop="20dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_storefront_24" />
 
     <TextView
         android:id="@+id/title_menu_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_menu_item"
-        android:paddingTop="40dp"
-        android:paddingBottom="40dp"
+        android:paddingBottom="25dp"
         android:text="Menu"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="15dp"
         android:textStyle="bold" />
+
+
+
+
 </LinearLayout>
